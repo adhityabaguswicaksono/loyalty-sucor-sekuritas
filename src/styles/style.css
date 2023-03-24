@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .grid-all {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas: 'profile detail detail';
+  }
+
+  .grid-profile {
+    grid-area: 'profile';
+  }
+
+  .grid-detail {
+    grid-area: 'detail';
+  }
+}

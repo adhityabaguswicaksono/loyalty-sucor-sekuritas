@@ -1,0 +1,15 @@
+{
+  "short_name": "Loyalty Sucor Sekuritas",
+  "name": "Loyalty Sucor Sekuritas",
+  "icons": [
+    {
+      "src": "icon-web.ico",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "rgba(23, 68, 137, 1)",
+  "background_color": "#ffffff"
+}
