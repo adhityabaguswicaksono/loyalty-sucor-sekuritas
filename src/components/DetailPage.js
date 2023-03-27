@@ -44,7 +44,7 @@ export function DetailPage() {
               <p className="text-md">
                 <i className="fa-solid fa-location-dot"></i>
               </p>
-              <p className="text-md">{replaceText(data.address)}</p>
+              {replaceText(data.address)}
             </div>
             <div className="flex flex-row gap-3 mb-3 break-all md:break-normal">
               <p className="text-md">
