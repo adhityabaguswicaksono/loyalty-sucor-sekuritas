@@ -4,8 +4,12 @@ import NavBar from './NavBar';
 import '../styles/style.css';
 import { Helmet } from 'react-helmet';
 import Loader from './Loader';
+import NotFound from './NotFound';
 
 export function DetailPage() {
+  if (useLocation().state === null) {
+    return <NotFound />;
+  }
   const data = useLocation().state.element;
 
   function replaceText(text) {
