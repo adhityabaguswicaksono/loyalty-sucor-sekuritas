@@ -53,7 +53,11 @@ const Pagination = (props) => {
           })}
           onClick={onPrevious}
         >
-          <i class="fa-solid fa-chevron-left"></i>
+          <p class="inline-block">
+            <svg class="h-4 w-4 inline-block"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"> 
+              <polyline points="15 18 9 12 15 6" />
+            </svg>
+          </p>
         </li>
         {paginationRange.map((pageNumber) => {
           if (pageNumber === DOTS) {
@@ -92,7 +96,11 @@ const Pagination = (props) => {
           })}
           onClick={onNext}
         >
-          <i class="fa-solid fa-chevron-right"></i>
+          <p className="inline-block">
+            <svg className="h-4 w-4 inline-block"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round">
+              <polyline points="9 18 15 12 9 6" />
+            </svg>
+          </p>  
         </li>
       </ul>
     </div>
