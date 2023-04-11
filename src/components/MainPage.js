@@ -18,13 +18,7 @@ function MainPage() {
 
   async function fetchData() {
     const dataAPI = await axios.get(
-      'https://apiloyalty.sucorsekuritas.com/api/v1/merchant/MerchantList',
-      {
-        headers: {
-          'Access-Control-Request-Private-Network': true,
-          'Access-Control-Request-Credentials': true,
-        },
-      }
+      'https://apiloyalty.sucorsekuritas.com/api/v1/merchant/MerchantList'
     );
 
     setMerchantData(dataAPI.data);
