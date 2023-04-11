@@ -18,7 +18,13 @@ function MainPage() {
 
   async function fetchData() {
     const dataAPI = await axios.get(
-      'https://apiloyalty.sucorsekuritas.com/api/v1/merchant/MerchantList'
+      'https://apiloyalty.sucorsekuritas.com/api/v1/merchant/MerchantList',
+      {
+        headers: {
+          'Access-Control-Request-Private-Network': true,
+          'Access-Control-Request-Credentials': true,
+        },
+      }
     );
 
     setMerchantData(dataAPI.data);
@@ -29,7 +35,7 @@ function MainPage() {
     const filterText = searchData.toLowerCase();
 
     filteredData = merchantData.filter((element) => {
-      return element['merchantID'].toLowerCase().includes(filterText)
+      return element['merchantID'].toLowerCase().includes(filterText);
     });
 
     let currentFilteredMerchantData = useMemo(() => {
@@ -157,12 +163,8 @@ function MainPage() {
             </div>
           </div>
 
-          {searchData.length === 0 && (
-              <ShowFullData />
-          )}
-          {searchData.length > 0 && (
-              <ShowFilteredData />
-          )}
+          {searchData.length === 0 && <ShowFullData />}
+          {searchData.length > 0 && <ShowFilteredData />}
         </div>
       </div>
     </>
