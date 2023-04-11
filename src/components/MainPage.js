@@ -1,10 +1,10 @@
-import React, { useState, useEffect, Suspense, useMemo } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import axios from 'axios';
 import NavBar from './NavBar';
-import { Link } from 'react-router-dom';
 import Pagination from './Pagination';
 import { Helmet } from 'react-helmet';
 import Loader from './Loader';
+import Card from './Card';
 
 let PageSize = 10;
 
@@ -14,6 +14,7 @@ function MainPage() {
   const [categoryData, setCategoryData] = useState('');
   const [currentPage, setCurrentPage] = useState(1);
   const [isLoading, setIsLoading] = useState(true);
+  let filteredData = [];
 
   async function fetchData() {
     const dataAPI = await axios.get(
@@ -27,13 +28,11 @@ function MainPage() {
   function ShowFilteredData() {
     const filterText = searchData.toLowerCase();
 
-    const filteredData = merchantData.filter((element) => {
-      if (element['merchantID'].toLowerCase().includes(filterText)) {
-        return true;
-      }
+    filteredData = merchantData.filter((element) => {
+      return element['merchantID'].toLowerCase().includes(filterText)
     });
 
-    const currentFilteredMerchantData = useMemo(() => {
+    let currentFilteredMerchantData = useMemo(() => {
       const firstPageIndex = (currentPage - 1) * PageSize;
       const lastPageIndex = firstPageIndex + PageSize;
       return filteredData.slice(firstPageIndex, lastPageIndex);
@@ -44,22 +43,7 @@ function MainPage() {
         <>
           <div className="flex flex-wrap flex-col md:flex-row gap-4 justify-center">
             {currentFilteredMerchantData.map((element) => (
-              <Link
-                to={`./merchant-detail`}
-                state={{ element }}
-                key={element.merchantNID}
-              >
-                <div className="group flex flex-row md:flex-col grow md:grow-0 md:w-80 md:h-full bg-sucorblue p-4 md:p-8 rounded-lg gap-4 md:gap-8 text-white outline outline-0 duration-150 hover:bg-white hover:text-sucorblue hover:outline-1 hover:outline-sucorblue hover:ease-in">
-                  <img
-                    src={element.img}
-                    className="rounded-full bg-white w-24 h-24 md:w-52 md:h-52 bg-cover self-center outline outline-0 duration-150 group-hover:outline-1 group-hover:outline-sucorblue"
-                    alt={element.merchantID}
-                  />
-                  <h4 className="text-xl text-start md:text-center self-center">
-                    {element.merchantID}
-                  </h4>
-                </div>
-              </Link>
+              <Card data={element} />
             ))}
           </div>
           <Pagination
@@ -98,22 +82,7 @@ function MainPage() {
         <>
           <div className="flex flex-wrap flex-col md:flex-row gap-4 justify-center">
             {currentMerchantData.map((element) => (
-              <Link
-                to={`./merchant-detail`}
-                state={{ element }}
-                key={element.merchantNID}
-              >
-                <div className="group flex flex-row md:flex-col grow md:grow-0 md:w-80 bg-sucorblue p-4 md:p-8 rounded-lg gap-4 md:gap-8 text-white outline outline-0 duration-150 hover:bg-white hover:text-sucorblue hover:outline-1 hover:outline-sucorblue hover:ease-in">
-                  <img
-                    src={element.img}
-                    className="rounded-full bg-white w-24 h-24 md:w-52 md:h-52 bg-cover self-center outline outline-0 duration-150 group-hover:outline-1 group-hover:outline-sucorblue"
-                    alt={element.merchantID}
-                  />
-                  <h4 className="text-xl text-start md:text-center self-center">
-                    {element.merchantID}
-                  </h4>
-                </div>
-              </Link>
+              <Card data={element} />
             ))}
           </div>
           <Pagination
@@ -189,14 +158,10 @@ function MainPage() {
           </div>
 
           {searchData.length === 0 && (
-            <Suspense fallback={<Loader />}>
               <ShowFullData />
-            </Suspense>
           )}
           {searchData.length > 0 && (
-            <Suspense fallback={<Loader />}>
               <ShowFilteredData />
-            </Suspense>
           )}
         </div>
       </div>
