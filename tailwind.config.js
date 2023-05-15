@@ -16,7 +16,7 @@ module.exports = {
         "sucor-900": "#0C2448",
       },
       maxWidth: {
-        xxs: "16rem",
+        xxs: "14rem",
       },
       fontFamily: {
         cera: ["Cera Pro Regular", "sans-serif"],
