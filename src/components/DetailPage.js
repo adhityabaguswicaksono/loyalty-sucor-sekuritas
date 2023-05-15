@@ -34,7 +34,7 @@ export function DetailPage() {
                 className="rounded-full bg-white w-36 h-36 md:w-52 md:h-52 bg-cover self-center"
                 alt={data.merchantID}
               />
-              <h4 className="text-xl font-bold font-cera-bold text-center self-center">
+              <h4 className="text-xl font-cera-bold text-center self-center">
                 {data.merchantID}
               </h4>
             </div>
@@ -104,7 +104,7 @@ export function DetailPage() {
         </div>
         <div>
           <div className="flex flex-wrap flex-col grow gap-4 p-8 md:p-12 justify-center bg-white rounded-md text-sucor-500 outline outline-1 outline-sucor-500 grid-detail">
-            <h4 className="text-xl font-bold font-cera-bold text-center self-center pb-8">
+            <h4 className="text-xl font-cera-bold text-center self-center pb-8">
               About
               <br />
               {data.merchantID}

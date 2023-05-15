@@ -57,7 +57,7 @@ function MainPage() {
     } else if (filteredData.length === 0) {
       return (
         <div className="group flex flex-col grow bg-white p-8 py-24 rounded-lg gap-4 md:gap-8 text-red-600 outline outline-1 outline-red-600 duration-150">
-          <h4 className="text-2xl text-center font-bold">
+          <h4 className="text-2xl text-center font-cera-bold">
             Tidak Ada Data Merchant
           </h4>
           <h4 className="text-normal text-center self-center">
@@ -107,7 +107,7 @@ function MainPage() {
       </Helmet>
       <NavBar />
       <div className="container mx-auto p-8 font-cera">
-        <div className="pb-48 pt-60 font-bold font-cera-bold text-center text-sucor-500">
+        <div className="pb-48 pt-60 font-cera-bold text-center text-sucor-500">
           <h2 className="text-xl pb-4">Selamat Datang di</h2>
           <h1 className="text-3xl">LOYALTY SUCOR SEKURITAS</h1>
         </div>

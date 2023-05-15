@@ -7,8 +7,8 @@ function NotFound() {
     <>
       <NavBar />
       <div className="font-cera container mx-auto p-8 pt-48 text-center text-sucor-500">
-        <h1 className="text-4xl font-bold pb-2 font-cera-bold">Maaf!</h1>
-        <h3 className="text-2xl font-bold pb-8 font-cera-bold">
+        <h1 className="text-4xl pb-2 font-cera-bold">Maaf!</h1>
+        <h3 className="text-2xl pb-8 font-cera-bold">
           Halaman ini tidak ditemukan!
         </h3>
         <p className="text-md pb-8">
