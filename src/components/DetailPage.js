@@ -11,7 +11,10 @@ export function DetailPage() {
   function replaceText(text) {
     let result = text.replace(/(\r\n|\r|\n)/g, "<br/>");
     return (
-      <p className="text-md" dangerouslySetInnerHTML={{ __html: result }} />
+      <p
+        className="text-md leading-relaxed"
+        dangerouslySetInnerHTML={{ __html: result }}
+      />
     );
   }
 
