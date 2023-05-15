@@ -1,6 +1,6 @@
-import React from 'react';
-import classnames from 'classnames';
-import { usePagination, DOTS } from './usePagination';
+import React from "react";
+import classnames from "classnames";
+import { usePagination, DOTS } from "./usePagination";
 
 const Pagination = (props) => {
   const {
@@ -34,26 +34,34 @@ const Pagination = (props) => {
   let lastPage = paginationRange[paginationRange.length - 1];
   return (
     <div
-      className={classnames('text-center mt-8', {
+      className={classnames("text-center mt-8", {
         [className]: className,
       })}
     >
       <ul
-        className={classnames('inline-flex -space-x-px cursor-pointer', {
+        className={classnames("inline-flex -space-x-px cursor-pointer", {
           [className]: className,
         })}
       >
         <li
           key="left"
-          className={classnames('px-2 md:px-3 py-2 leading-tight', {
-            'opacity-25 text-gray-500 bg-white border border-gray-300 rounded-l-md duration-150 hover:ease-in-out hover:bg-white hover:text-gray-500':
+          className={classnames("px-2 md:px-3 py-2 leading-tight", {
+            "opacity-25 text-gray-500 bg-white border border-gray-300 rounded-l-md duration-150 hover:ease-in-out hover:bg-white hover:text-gray-500":
               currentPage === 1,
-            'text-gray-500 bg-white border border-gray-300 rounded-l-md duration-150 hover:ease-in-out hover:bg-gray-100 hover:text-gray-700':
+            "text-gray-500 bg-white border border-gray-300 rounded-l-md duration-150 hover:ease-in-out hover:bg-gray-100 hover:text-gray-700":
               currentPage !== 1,
           })}
           onClick={onPrevious}
         >
-          <svg className="h-4 w-4 inline-block"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  strokeWidth="2"  strokeLinecap="round"  strokeLinejoin="round"> 
+          <svg
+            className="h-4 w-4 inline-block"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          >
             <polyline points="15 18 9 12 15 6" />
           </svg>
         </li>
@@ -72,10 +80,10 @@ const Pagination = (props) => {
           return (
             <li
               key={pageNumber}
-              className={classnames('px-2 md:px-3 py-2 leading-tight', {
-                'text-white bg-sucorblue-1 border border-gray-300 duration-150 hover:bg-sucorblue-2 hover:text-white hover:ease-in-out':
+              className={classnames("px-2 md:px-3 py-2 leading-tight", {
+                "text-white bg-sucor-500 border border-gray-300 duration-150 hover:text-white hover:ease-in-out":
                   pageNumber === currentPage,
-                'text-gray-500 bg-white border border-gray-300 duration-150 hover:ease-in-out hover:bg-gray-100 hover:text-gray-700':
+                "text-gray-500 bg-white border border-gray-300 duration-150 hover:ease-in-out hover:bg-gray-100 hover:text-gray-700":
                   pageNumber !== currentPage,
               })}
               onClick={() => onPageChange(pageNumber)}
@@ -86,15 +94,23 @@ const Pagination = (props) => {
         })}
         <li
           key="right"
-          className={classnames('px-2 md:px-3 py-2 leading-tight', {
-            'opacity-25 text-gray-500 bg-white border border-gray-300 rounded-r-md duration-150 hover:ease-in-out hover:bg-white hover:text-gray-500':
+          className={classnames("px-2 md:px-3 py-2 leading-tight", {
+            "opacity-25 text-gray-500 bg-white border border-gray-300 rounded-r-md duration-150 hover:ease-in-out hover:bg-white hover:text-gray-500":
               currentPage === lastPage,
-            'text-gray-500 bg-white border border-gray-300 rounded-r-md duration-150 hover:ease-in-out hover:bg-gray-100 hover:text-gray-700':
+            "text-gray-500 bg-white border border-gray-300 rounded-r-md duration-150 hover:ease-in-out hover:bg-gray-100 hover:text-gray-700":
               currentPage !== lastPage,
           })}
           onClick={onNext}
         >
-          <svg className="h-4 w-4 inline-block"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  strokeWidth="2"  strokeLinecap="round"  strokeLinejoin="round">
+          <svg
+            className="h-4 w-4 inline-block"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          >
             <polyline points="9 18 15 12 9 6" />
           </svg>
         </li>

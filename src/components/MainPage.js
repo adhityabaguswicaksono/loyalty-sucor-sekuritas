@@ -1,24 +1,24 @@
-import React, { useState, useEffect, useMemo } from 'react';
-import axios from 'axios';
-import NavBar from './NavBar';
-import Pagination from './Pagination';
-import { Helmet } from 'react-helmet';
-import Loader from './Loader';
-import Card from './Card';
+import React, { useState, useEffect, useMemo } from "react";
+import axios from "axios";
+import NavBar from "./NavBar";
+import Pagination from "./Pagination";
+import { Helmet } from "react-helmet";
+import Loader from "./Loader";
+import Card from "./Card";
 
-let PageSize = 10;
+let PageSize = 20;
 
 function MainPage() {
   const [merchantData, setMerchantData] = useState([]);
-  const [searchData, setSearchData] = useState('');
-  const [categoryData, setCategoryData] = useState('');
+  const [searchData, setSearchData] = useState("");
+  const [categoryData, setCategoryData] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
   const [isLoading, setIsLoading] = useState(true);
   let filteredData = [];
 
   async function fetchData() {
     const dataAPI = await axios.get(
-      'https://apiloyalty.sucorsekuritas.com/api/v1/merchant/MerchantList'
+      "https://apiloyalty.sucorsekuritas.com/api/v1/merchant/MerchantList"
     );
 
     setMerchantData(dataAPI.data);
@@ -29,7 +29,7 @@ function MainPage() {
     const filterText = searchData.toLowerCase();
 
     filteredData = merchantData.filter((element) => {
-      return element['merchantID'].toLowerCase().includes(filterText);
+      return element["merchantID"].toLowerCase().includes(filterText);
     });
 
     let currentFilteredMerchantData = useMemo(() => {
@@ -106,20 +106,19 @@ function MainPage() {
         <title>Loyalty Sucor Sekuritas</title>
       </Helmet>
       <NavBar />
-      <div className="container mx-auto p-8">
-        <div className="pb-48 pt-60 font-bold text-center text-sucorblue">
+      <div className="container mx-auto p-8 font-cera">
+        <div className="pb-48 pt-60 font-bold font-cera-bold text-center text-sucor-500">
           <h2 className="text-xl pb-4">Selamat Datang di</h2>
           <h1 className="text-3xl">LOYALTY SUCOR SEKURITAS</h1>
         </div>
 
-        <hr className="border border-1 border-sucorblue rounded-full" />
+        <hr className="border border-1 border-sucor-500 rounded-full" />
 
         <div className="py-12">
-          <h2 className="text-xl font-bold text-center text-sucorblue pb-4">
-            Daftar Merchant
-            <br />
-            Loyalty Sucor Sekuritas
-          </h2>
+          <div className="font-cera-bold text-sucor-500 pb-8 text-center">
+            <h2 className="text-xl pb-4 ">Daftar Merchant</h2>
+            <h1 className="text-3xl">LOYALTY SUCOR SEKURITAS</h1>
+          </div>
 
           <div className="flex flex-col gap-3 py-6 md:flex-row-reverse">
             <div className="grow items-center">
@@ -130,7 +129,7 @@ function MainPage() {
                 <input
                   type="text"
                   id="simple-search"
-                  className="bg-white border border-gray-300 text-gray-900 text-sm rounded-md focus:ring-sucorblue focus:ring-0 focus:border-sucorblue focus:outline-none block w-full p-2.5"
+                  className="bg-white border border-gray-300 text-gray-900 text-sm rounded-md focus:ring-sucor-500 focus:ring-0 focus:border-sucor-500 focus:outline-none block w-full p-2.5"
                   placeholder="Search..."
                   onChange={(e) => {
                     setSearchData(e.target.value);
@@ -144,7 +143,7 @@ function MainPage() {
               </label>
               <select
                 id="category"
-                className="bg-white border border-gray-300 text-gray-900 text-sm rounded-md focus:ring-sucorblue focus:border-sucorblue focus:outline-none block w-full p-2.5"
+                className="h-full bg-white border border-gray-300 text-gray-900 text-sm rounded-md focus:ring-sucor-500 focus:border-sucor-500 focus:outline-none block w-full p-2.5"
                 defaultValue="0"
                 onChange={(e) => {
                   setCategoryData(e.target.value);

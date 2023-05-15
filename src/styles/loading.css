@@ -9,7 +9,7 @@
   height: 50px;
 }
 .spinner .path {
-  stroke: rgba(23, 68, 137, 1);
+  stroke: #174489;
   stroke-linecap: round;
   animation: dash 1.5s ease-in-out infinite;
 }
