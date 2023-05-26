@@ -242,8 +242,6 @@ export function DetailPage() {
   // For save data from state
   const data = checkState.element;
 
-  console.info(data.telp);
-
   return isLoading ? (
     <Loader />
   ) : (
