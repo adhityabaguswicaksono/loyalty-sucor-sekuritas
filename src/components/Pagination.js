@@ -19,30 +19,37 @@ const Pagination = (props) => {
     pageSize,
   });
 
+  // For Logic Next Page
   const onNext = () => {
     if (currentPage < paginationRange.length) {
       onPageChange(currentPage + 1);
     }
   };
 
+  // For Logic Previous Page
   const onPrevious = () => {
     if (currentPage > 1) {
       onPageChange(currentPage - 1);
     }
   };
 
+  // For Calculate Last Page
   let lastPage = paginationRange[paginationRange.length - 1];
   return (
     <div
+      data-aos="fade-up"
+      data-aos-offset="0"
       className={classnames("text-center mt-8", {
         [className]: className,
       })}
     >
+      {/* Pagination Start */}
       <ul
         className={classnames("inline-flex -space-x-px cursor-pointer", {
           [className]: className,
         })}
       >
+        {/* For Previous Page */}
         <li
           key="left"
           className={classnames("px-2 md:px-3 py-2 leading-tight", {
@@ -53,19 +60,11 @@ const Pagination = (props) => {
           })}
           onClick={onPrevious}
         >
-          <svg
-            className="h-4 w-4 inline-block"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          >
-            <polyline points="15 18 9 12 15 6" />
-          </svg>
+          <i className="fa-solid fa-chevron-left"></i>
         </li>
+
         {paginationRange.map((pageNumber) => {
+          // For More Page in intiate with DOTS (...)
           if (pageNumber === DOTS) {
             return (
               <li
@@ -77,11 +76,12 @@ const Pagination = (props) => {
             );
           }
 
+          // For More Page in Number
           return (
             <li
               key={pageNumber}
               className={classnames("px-2 md:px-3 py-2 leading-tight", {
-                "text-white bg-sucor-500 border border-gray-300 duration-150 hover:text-white hover:ease-in-out":
+                "text-white bg-sucor-500 border border-gray-300 duration-150 hover:text-white hover:bg-sucor-700 hover:ease-in-out":
                   pageNumber === currentPage,
                 "text-gray-500 bg-white border border-gray-300 duration-150 hover:ease-in-out hover:bg-gray-100 hover:text-gray-700":
                   pageNumber !== currentPage,
@@ -92,6 +92,8 @@ const Pagination = (props) => {
             </li>
           );
         })}
+
+        {/* For Next Page */}
         <li
           key="right"
           className={classnames("px-2 md:px-3 py-2 leading-tight", {
@@ -102,19 +104,10 @@ const Pagination = (props) => {
           })}
           onClick={onNext}
         >
-          <svg
-            className="h-4 w-4 inline-block"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          >
-            <polyline points="9 18 15 12 9 6" />
-          </svg>
+          <i className="fa-solid fa-chevron-right"></i>
         </li>
       </ul>
+      {/* Pagination End */}
     </div>
   );
 };

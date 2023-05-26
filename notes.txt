@@ -68,3 +68,17 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+
+
+- Penambahan dokumentasi program pada setiap baris program.
+- Pemindahan file font ke file src.
+- Penggantian warna tombol dan kartu merchant ketika disentuh.
+- Penambahan animasi menggunakan AOS.
+- Melakukan pencegahan ketika halaman merchant di buka tanpa menekan kartu merchant.
+- Pengubahan logo dan icon web pada navigation bar.
+- Pengubahan icon menggunakan Font Awesome.
+- Membuat fungsi untuk mengubah teks REGEX ke HTML tag serta membuat link dari teks tersebut sesuai keberadaan link teks.
+- Penambahan footer bar pada setiap halaman.
+- Fixed bug.

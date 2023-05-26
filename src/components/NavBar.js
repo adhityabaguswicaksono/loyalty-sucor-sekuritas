@@ -1,33 +1,28 @@
-import logo from "../assets/sucor-sekuritas-white-logo.png";
+import logo from "../assets/logo-sucor-sekuritas-white.png";
 import { Link } from "react-router-dom";
 
 export default function NavBar() {
   return (
-    <nav className="fixed w-full px-8 py-5 bg-sucor-500 gap-x-5 rounded-b-md z-50 font-cera">
-      <div className="container mx-auto flex justify-between content-center items-center">
-        <div className="max-w-xxs">
+    <nav
+      data-aos="fade-down"
+      className="fixed w-full px-8 py-5 bg-sucor-500 rounded-b-md z-50 font-cera"
+    >
+      <div className="container mx-auto flex gap-x-3 justify-between content-center items-center">
+        {/* Left Logo Start */}
+        <div className="leading-none">
           <Link to="/">
-            <img src={logo} alt="Logo Sucor Sekuritas" />
+            <p className="text-white -mb-2">Loyalty</p>
+            <img src={logo} className="w-[200px]" alt="Logo Sucor Sekuritas" />
           </Link>
         </div>
+        {/* Left Logo End */}
+
+        {/* Right Button Start */}
         <div>
           <Link to="https://eform.sucorsekuritas.com/">
-            <button className="rounded-md bg-white px-4 py-3 text-sucor-500 outline outline-0 hover:bg-sucor-500 hover:outline-1 hover:outline-white hover:text-white hover:ease-in-out duration-150">
+            <button className="rounded-md bg-white px-4 py-3 outline outline-1 outline-white text-sucor-500 hover:text-white hover:bg-sucor-500 hover:ease-in-out duration-300">
               <p className="md:hidden leading-none">
-                <svg
-                  className="h-6 w-6"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  {" "}
-                  <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4" />
-                  <polyline points="10 17 15 12 10 7" />
-                  <line x1="15" y1="12" x2="3" y2="12" />
-                </svg>
+                <i className="fa-solid fa-right-to-bracket py-1"></i>
               </p>
               <p className="hidden md:inline-block leading-none">
                 Online Registration
@@ -35,6 +30,7 @@ export default function NavBar() {
             </button>
           </Link>
         </div>
+        {/* Right Button End */}
       </div>
     </nav>
   );

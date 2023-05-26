@@ -4,12 +4,12 @@
 
 @font-face {
   font-family: "Cera Pro Regular";
-  src: url("../../public/fonts/Cera\ Pro\ Regular.otf");
+  src: url("../fonts/Cera\ Pro\ Regular.otf");
 }
 
 @font-face {
   font-family: "Cera Pro Bold";
-  src: url("../../public/fonts/Cera\ Pro\ Bold.otf");
+  src: url("../fonts/Cera\ Pro\ Bold.otf");
 }
 
 @layer components {
@@ -26,5 +26,9 @@
 
   .grid-detail {
     grid-area: 'detail';
+  }
+
+  .calculation-height{
+    min-height: calc(100vh - 192px);
   }
 }
