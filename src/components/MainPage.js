@@ -153,7 +153,7 @@ export default function MainPage() {
           {/* Seperator Start */}
           <hr
             data-aos="fade-up"
-            className="border border-1 border-sucor-500 rounded-full"
+            className="h-0.5 border-none bg-sucor-500 rounded-full"
           />
           {/* Seperator End */}
 

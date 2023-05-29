@@ -19,7 +19,11 @@ export default function NavBar() {
 
         {/* Right Button Start */}
         <div>
-          <Link to="https://eform.sucorsekuritas.com/">
+          <Link
+            to="https://eform.sucorsekuritas.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <button className="rounded-md bg-white px-4 py-3 outline outline-1 outline-white text-sucor-500 hover:text-white hover:bg-sucor-500 hover:ease-in-out duration-300">
               <p className="md:hidden leading-none">
                 <i className="fa-solid fa-right-to-bracket py-1"></i>

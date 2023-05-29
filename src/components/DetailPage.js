@@ -278,7 +278,7 @@ export function DetailPage() {
             {/* Merchant Head Box End */}
 
             {/* Seperator Start */}
-            <hr className="border border-1 border-white rounded-full my-4" />
+            <hr className="h-0.5 bg-white rounded-full my-4" />
             {/* Seperator End */}
 
             {/* Merchant Detail Start */}
