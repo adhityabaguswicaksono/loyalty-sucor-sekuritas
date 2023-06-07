@@ -1,3 +1,3 @@
-# loyalty-sucor-sekuritas
+# Loyalty Sucor Sekuritas Website
 
-[Edit on StackBlitz ⚡️](https://stackblitz.com/edit/loyalty-sucor-sekuritas)
+Visit on [https://loyalty-sucor-sekuritas-demo.vercel.app/].
