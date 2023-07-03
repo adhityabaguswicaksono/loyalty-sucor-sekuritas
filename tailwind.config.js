@@ -4,16 +4,18 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        "sucor-50": "#B8D0F3",
-        "sucor-100": "#A0C0EF",
-        "sucor-200": "#81ABEA",
-        "sucor-300": "#578FE3",
-        "sucor-400": "#246AD4",
-        "sucor-500": "#174489",
-        "sucor-600": "#143A75",
-        "sucor-700": "#113263",
-        "sucor-800": "#0E2A54",
-        "sucor-900": "#0C2448",
+        sucor: {
+          50: "#e8ecf3",
+          100: "#b7c5da",
+          200: "#94a9c9",
+          300: "#6482b0",
+          400: "#4569a1",
+          500: "#174489",
+          600: "#153e7d",
+          700: "#103061",
+          800: "#0d254b",
+          900: "#0a1d3a",
+        },
       },
       fontFamily: {
         cera: ["Cera Pro Regular", "sans-serif"],
